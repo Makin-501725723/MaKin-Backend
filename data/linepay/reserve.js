@@ -21,7 +21,7 @@ let options = {
     },
   ],
   redirectUrls: {
-    confirmUrl: 'https://makin-sound.vercel.app/pay-confirm',
-    cancelUrl: 'https://makin-sound.vercel.app/pay-cancel',
+    confirmUrl: 'https://makin-music.vercel.app/pay-confirm',
+    cancelUrl: 'https://makin-music.vercel.app/pay-cancel',
   },
 }

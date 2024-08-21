@@ -29,7 +29,7 @@ const generateRandomString = function (length) {
 //     client_id: spotify_client_id,
 //     scope: scope,
 //     //我有修改
-//     redirect_uri: 'https://makin-backend.vercel.app/api/spotify/callback',
+//     redirect_uri: 'https://makin-music-backend.vercel.app/api/spotify/callback',
 //     state: state,
 //   })
 

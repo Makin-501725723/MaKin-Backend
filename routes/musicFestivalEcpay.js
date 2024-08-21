@@ -166,9 +166,9 @@ router.post('/', authenticate, async (req, res) => {
     const TradeDesc = '商店線上付款'
     const ItemName = `訂單編號: ${orderRecord.order_num}、${itemNames}`
     const ChoosePayment = 'ALL'
-    const ReturnURL = `https://makin-sound.vercel.app/ticket/musicFestival/finish/${actid}`
+    const ReturnURL = `https://makin-music.vercel.app/ticket/musicFestival/finish/${actid}`
     const OrderResultURL =
-      'https://makin-backend.vercel.app/api/musicFestivalEcpay/callback'
+      'https://makin-music-backend.vercel.app/api/musicFestivalEcpay/callback'
 
     // 計算 CheckMacValue
     const MerchantTradeDate = new Date()
@@ -339,7 +339,7 @@ router.post('/callback', async (req, res) => {
     const actid = orderRecord.activity_id
 
     // 跳轉回結果頁面
-    const redirectUrl = `https://makin-sound.vercel.app/ticket/musicFestival/finish/${actid}?order_num=${MerchantTradeNo}`
+    const redirectUrl = `https://makin-music.vercel.app/ticket/musicFestival/finish/${actid}?order_num=${MerchantTradeNo}`
     res.redirect(redirectUrl)
   } catch (error) {
     console.error('處理回調時出錯:', error)
@@ -414,7 +414,7 @@ router.post('/send-email', async (req, res) => {
           <table style="width: 100%; border-collapse: collapse;">
             <tr>
               <td style="text-align: center; padding-bottom: 20px;">
-                <a href="https://makin-sound.vercel.app" style="display: inline-block;">
+                <a href="https://makin-music.vercel.app" style="display: inline-block;">
                   <img src="https://i.postimg.cc/zfywKMCt/makin-Logo-huge.png" alt="MaK'in Logo" style="width: 150px; height: auto;" />
                 </a>
               </td>
@@ -463,7 +463,7 @@ router.post('/send-email', async (req, res) => {
                   </tr>
                 </table>
                 <p style="margin-top: 20px; font-size: 14px; color: #555;">
-                  更多詳情: <a href="https://makin-sound.vercel.app/ticket-detail/${order_num}" style="color: #007bff;">點此查看訂單</a>
+                  更多詳情: <a href="https://makin-music.vercel.app/ticket-detail/${order_num}" style="color: #007bff;">點此查看訂單</a>
                 </p>
               </td>
             </tr>

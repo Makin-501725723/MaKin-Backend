@@ -14,7 +14,7 @@ import axios from 'axios'
 import querystring from 'querystring'
 const spotify_client_id = process.env.SPOTIFY_CLIENT_ID
 const spotify_client_secret = process.env.SPOTIFY_CLIENT_SECRET
-const redirect_uri = 'https://makin-backend.vercel.app/callback'
+const redirect_uri = 'https://makin-music-backend.vercel.app/callback'
 
 // 使用內建的 MemoryStore
 const MemoryStore = session.MemoryStore
@@ -35,7 +35,7 @@ const app = express()
 // cors設定，參數為必要，注意不要只寫`app.use(cors())`
 app.use(
   cors({
-    origin: ['https://makin-sound.vercel.app', 'https://accounts.spotify.com'],
+    origin: ['https://makin-music.vercel.app', 'https://accounts.spotify.com'],
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true,
   })
@@ -110,7 +110,7 @@ app.get('/callback', async (req, res) => {
     const { access_token, refresh_token } = response.data
     // 重定向到前端的一個特定頁面，並附帶 token
     res.redirect(
-      `https://makin-sound.vercel.app/auth/callback#access_token=${access_token}&refresh_token=${refresh_token}`
+      `https://makin-music.vercel.app/auth/callback#access_token=${access_token}&refresh_token=${refresh_token}`
     )
   } catch (error) {
     res.send(error)
