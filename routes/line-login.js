@@ -143,7 +143,7 @@ router.get(
       res.cookie('accessToken', accessToken, {
         httpOnly: true,
         secure: true,
-        sameSite: 'Lax',
+        sameSite: 'None',
         path: '/',
       })
 

@@ -93,7 +93,7 @@ router.post('/', async (req, res) => {
   res.cookie('accessToken', accessToken, {
     httpOnly: true,
     secure: true,
-    sameSite: 'Lax',
+    sameSite: 'None',
     path: '/',
   })
 
@@ -109,7 +109,7 @@ router.post('/logout', authenticate, (req, res) => {
   res.clearCookie('accessToken', {
     httpOnly: true,
     secure: true,
-    sameSite: 'Lax',
+    sameSite: 'None',
   })
   res.json({ status: 'success', data: null })
 })

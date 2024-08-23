@@ -90,7 +90,7 @@ router.post('/', async function (req, res, next) {
   res.cookie('accessToken', accessToken, {
     httpOnly: true,
     secure: true,
-    sameSite: 'Lax',
+    sameSite: 'None',
     path: '/',
   })
 
