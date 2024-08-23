@@ -65,7 +65,7 @@ app.use(
       maxAge: 30 * 86400000, // 30 天
       httpOnly: true,
       secure: true,
-      sameSite: 'None',
+      sameSite: 'Lax',
     },
     resave: false,
     saveUninitialized: false,
