@@ -38,6 +38,8 @@ app.use(
     origin: ['https://makin-music.vercel.app', 'https://accounts.spotify.com'],
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true,
+    allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
+    exposedHeaders: ['Set-Cookie'],
   })
 )
 
